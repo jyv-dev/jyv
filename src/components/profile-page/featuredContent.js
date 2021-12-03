@@ -6,7 +6,7 @@ import UploadIcon from "../../images/time-button.svg"
 
 export default function FeaturedContent(props) {
   return (
-    <Grid container direction="row">
+    <Grid container direction="row" style={{marginBottom: 30}}>
       <Grid item xs={6} style={{ marginRight: 20 }}>
         <img src={props.video.src} />
       </Grid>

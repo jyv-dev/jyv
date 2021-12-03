@@ -3,8 +3,9 @@ import * as React from "react"
 
 import PlayIcon from "../../images/play-button.svg"
 import UploadIcon from "../../images/time-button.svg"
+import VideoContent from "./videoContent";
 
-export default function Home(props) {
+export default function AllVideos(props) {
   return (
     <Grid
       container
@@ -22,7 +23,7 @@ export default function Home(props) {
       </Grid>
       <Grid item>
           <Grid container direction="row">
-              {videos.map((v) => <VideoContent />)}
+              {props.videos?.map((v) => <VideoContent />)}
           </Grid>
       </Grid>
     </Grid>

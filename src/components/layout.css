@@ -19,6 +19,15 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
+
+.page{
+  margin: 0;
+  width: 100vw;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
 article,
 aside,
 details,
