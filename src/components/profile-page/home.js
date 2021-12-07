@@ -22,6 +22,7 @@ export default function Home(props) {
           }}
         />
       </Grid>
+       {/* TODO: Make the first playlist to be "recent videos" on the DB side*/}
       <Grid item>
         {props.playlists?.map(p => (
           <Playlist playlist={p} />

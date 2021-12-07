@@ -6,14 +6,19 @@ import UploadIcon from "../../images/time-button.svg"
 
 export default function FeaturedContent(props) {
   return (
-    <Grid container direction="row" style={{marginBottom: 30}}>
+    <Grid container direction="row" style={{ marginBottom: 30 }}>
       <Grid item xs={6} style={{ marginRight: 20 }}>
         <img src={props.video.src} />
       </Grid>
       <Grid item style={{ maxWidth: "40vw" }}>
         <Grid container direction="column">
-          <Grid item style={{ marginBottom: 10 }}>
-            {props.video.title}
+          <Grid container direction="row" style={{ marginBottom: 10 }}>
+            <Grid item>{props.video.title}</Grid>
+            {!!props.isJyverse && (
+              <Grid item>
+                <img src={props.tokenSrc} />
+              </Grid>
+            )}
           </Grid>
           <Grid item style={{ marginBottom: 10 }}>
             <Grid container direction="row">

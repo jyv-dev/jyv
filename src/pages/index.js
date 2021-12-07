@@ -80,6 +80,7 @@ const IndexPage = () => {
           >
             <Grid item>
               {" "}
+              {/* TODO: Make this into a profile picture component */}
               <img
                 src={TestImage}
                 style={{
