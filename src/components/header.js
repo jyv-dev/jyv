@@ -15,7 +15,6 @@ const Header = props => (
     style={{
       background: `white`,
       padding: "17px",
-      marginBottom: `1.45rem`,
     }}
   >
     <Grid

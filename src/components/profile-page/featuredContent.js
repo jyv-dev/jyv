@@ -14,24 +14,37 @@ export default function FeaturedContent(props) {
         <Grid container direction="column">
           <Grid container direction="row" style={{ marginBottom: 10 }}>
             <Grid item>{props.video.title}</Grid>
-            {!!props.isJyverse && (
+            {!!props.tokenSrc && (
               <Grid item>
                 <img src={props.tokenSrc} />
               </Grid>
             )}
           </Grid>
           <Grid item style={{ marginBottom: 10 }}>
-            <Grid container direction="row">
+            <Grid container direction="row" alignItems="center">
               <Grid item style={{ marginRight: 5 }}>
-                <img src={PlayIcon} style={{ marginBottom: 0 }} />
+                <img src={PlayIcon} style={{ marginBottom: -3, width: 20 }} />
               </Grid>
-              <Grid item style={{ marginRight: 20 }}>
+              <Grid
+                item
+                style={{
+                  marginRight: 20,
+                  color: "#B3B3B3",
+                  fontWeight: 400,
+                  fontSize: 17,
+                }}
+              >
                 {props.video.plays}
               </Grid>
               <Grid item style={{ marginRight: 5 }}>
-                <img src={UploadIcon} style={{ marginBottom: 0 }} />
+                <img src={UploadIcon} style={{ marginBottom: -3, width: 25 }} />
               </Grid>
-              <Grid item>{props.video.upload_date}</Grid>
+              <Grid
+                item
+                style={{ color: "#B3B3B3", fontWeight: 400, fontSize: 17 }}
+              >
+                {props.video.upload_date}
+              </Grid>
             </Grid>
           </Grid>
           <Grid item style={{ marginBottom: 10 }}>

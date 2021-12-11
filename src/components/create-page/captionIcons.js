@@ -7,10 +7,10 @@ export default function CaptionIcons(props) {
   return (
     <Grid container direction="row">
       <Grid item>
-        <AlternateEmailIcon />
+        <AlternateEmailIcon style={{ width: 20 }} />
       </Grid>
       <Grid item>
-        <TagIcon />
+        <TagIcon style={{ width: 20 }} />
       </Grid>
     </Grid>
   )

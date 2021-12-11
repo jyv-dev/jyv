@@ -1,4 +1,5 @@
 import * as React from "react"
+import Grid from "@mui/material/Grid"
 
 import Layout from "../components/layout"
 
@@ -19,10 +20,10 @@ const Settings = () => (
           <Grid item>Security</Grid>
           <Grid item>Upcoming Features</Grid>
         </Grid>
-        {tab === "about-you" && <AboutYou />}
+        {/* {tab === "about-you" && <AboutYou />} */}
       </Grid>
     </div>
   </Layout>
 )
 
-export default Create
+export default Settings
