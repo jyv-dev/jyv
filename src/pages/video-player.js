@@ -1,6 +1,8 @@
 import * as React from "react"
 import Grid from "@mui/material/Grid"
+import ReactPlayer from "react-player"
 
+import TestVideo from "../videos/test_video.mp4"
 import Layout from "../components/layout"
 import VideoDetails from "../components/video-player/videoDetails"
 import CreatorDetails from "../components/video-player/creatorDetails"
@@ -8,6 +10,7 @@ import Queue from "../components/video-player/queue"
 import { TEST_VIDEOS, TEST_USER, TEST_TAGS } from "../constants/index"
 
 const VideoPlayer = () => {
+  // const video = URL.createObjectURL(TestVideo)
   return (
     <Layout>
       <Grid
@@ -16,7 +19,11 @@ const VideoPlayer = () => {
         direction="column"
         style={{ backgroundColor: "#f7f8f9" }}
       >
-        {/* <Video style={{ height: 1000 }} /> */}
+        <video id="samp" width="100%"  controls>
+          <source src={TestVideo} type="video/mp4" />
+        </video>
+        {/* <ReactPlayer url={TestVideo} width="100%" style={{width:'fill-content'}}/> */}
+        {/* <ReactPlayer url={[{ src: { TestVideo }, type: "video/mp4" }]} /> */}
         <VideoDetails
           title={TEST_VIDEOS[0].title}
           plays={TEST_VIDEOS[0].plays}

@@ -9,7 +9,26 @@ import CaptionIcons from "./captionIcons"
 import UploadIcon from "../../images/upload.png"
 import JyvButton from "../jyvButton"
 
-export default function UploadArea(props) {
+export default function VideoDetails(props) {
+  const handleCaptionChange = e => {
+    props.setCaption(e.target.value)
+  }
+
+  const handleDescriptionChange = e => {
+    props.setDescription(e.target.value)
+  }
+
+  const handleAccessChange = e => {
+    props.setAccess(e.target.value)
+  }
+
+  const handlePlaylistChange = e => {
+    props.setPlaylist(e.target.value)
+  }
+
+  const handleMainVideoChange = e => {
+    props.setIsMainVideo(e.target.value)
+  }
   return (
     <Grid
       container
@@ -29,6 +48,8 @@ export default function UploadArea(props) {
           //     </InputAdornment>
           //   ),
           // }}
+          onChange={handleCaptionChange}
+          value={props.caption}
           style={{ width: "100%" }}
         />
       </Grid>
@@ -36,7 +57,11 @@ export default function UploadArea(props) {
         Description
       </Grid>
       <Grid item>
-        <TextField style={{ width: "100%" }} />
+        <TextField
+          style={{ width: "100%" }}
+          onChange={handleDescriptionChange}
+          value={props.description}
+        />
       </Grid>
       <Grid item style={{ marginBottom: 10, marginTop: 20 }}>
         Cover Image
@@ -62,13 +87,13 @@ export default function UploadArea(props) {
         <Select
           // labelId="audience-select"
           // id="audience-select"
-          // value={}
+          value={props.access}
           // label="Audience Select"
-          // onChange={handleChange}
+          onChange={handleAccessChange}
           style={{ width: "100%" }}
         >
           <MenuItem value={"public"}>Public</MenuItem>
-          <MenuItem value={"private"}>Public</MenuItem>
+          <MenuItem value={"private"}>Private</MenuItem>
         </Select>
       </Grid>
       <Grid item style={{ marginBottom: 10, marginTop: 20 }}>
@@ -78,9 +103,9 @@ export default function UploadArea(props) {
         <Select
           // labelId="audience-select"
           // id="audience-select"
-          // value={}
-          // label="Audience Select"
-          // onChange={handleChange}
+          value={props.playlist}
+          label="Audience Select"
+          onChange={handlePlaylistChange}
           style={{ width: "100%" }}
         >
           <MenuItem value={"playlist 1"}>Playlist 1</MenuItem>
@@ -95,17 +120,22 @@ export default function UploadArea(props) {
         <Select
           // labelId="audience-select"
           // id="audience-select"
-          // value={}
+          value={props.isMainVideo}
           // label="Audience Select"
-          // onChange={handleChange}
+          onChange={handleMainVideoChange}
           style={{ width: "100%" }}
         >
-          <MenuItem value={"Yes"}>Yes</MenuItem>
-          <MenuItem value={"No"}>No</MenuItem>
+          <MenuItem value={true}>Yes</MenuItem>
+          <MenuItem value={false}>No</MenuItem>
         </Select>
       </Grid>
 
-      <Grid container direction="row" justifyContent="flex-start" style={{ marginTop: 20 }}>
+      <Grid
+        container
+        direction="row"
+        justifyContent="flex-start"
+        style={{ marginTop: 20 }}
+      >
         <JyvButton text="Cancel" variant="contained" />
         <JyvButton text="Post" variant="contained" />
       </Grid>
