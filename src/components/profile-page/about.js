@@ -11,7 +11,7 @@ export default function About(props) {
       direction="column"
       style={{ paddingLeft: "20px", marginTop: 40 }}
     >
-     {props.bio}
+     {props.biotest}
     </Grid>
   )
 }
