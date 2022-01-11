@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  frontend:
+    build: 
+        context: .
+    container_name: jyv-frontend
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
